@@ -30,4 +30,10 @@ public class BookService {
         book = data.stream().filter(e->e.getId()==id).findFirst().get();
         return book;
     }
+
+    //Post Method
+    public Book addBook(Book b){
+        data.add(b);
+        return b;
+    }
 }

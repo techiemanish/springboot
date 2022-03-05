@@ -28,9 +28,9 @@ public class MyController {
         return result;
     }
 
-    // @GetMapping("/books/{id}")
-    // public Book bookById(@PathVariable("id") int id){
-    //     Book book = this.bookService.getBookById(id);
-    //     return book;
-    // }
+    @GetMapping("/books/{id}")
+    public Book bookById(@PathVariable("id") int id){
+        Book book = this.bookService.getBookById(id);
+        return book;
+    }
 }

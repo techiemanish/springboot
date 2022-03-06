@@ -2,6 +2,7 @@ package com.api.book.restapibook.Services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.api.book.restapibook.Entity.Book;
 
@@ -35,5 +36,23 @@ public class BookService {
     public Book addBook(Book b){
         data.add(b);
         return b;
+    }
+
+    //Delete Method 
+    public void deleteBookById(int id){
+        data = data.stream().filter(e->e.getId()!=id).collect(Collectors.toList());
+    }
+
+    //Update Method
+    public void updateBook(Book book, int id){
+        // Book res = data.stream().filter(e->e.getId() == id).findFirst().get();
+        // res = book;
+        data = data.stream().map(e->{
+            if(e.getId() == id){
+                e.setTitle(book.getTitle());
+                e.setAuthor(book.getAuthor());
+            }
+            return e;
+        }).collect(Collectors.toList());
     }
 }

@@ -8,7 +8,7 @@ public class RestApiBookApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RestApiBookApplication.class, args);
-		System.out.println("Application Started.........");
+		System.out.println("REST API Application Started.........");
 	}
 
 }
